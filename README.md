@@ -52,14 +52,14 @@ curl localhost:5000/generatehttp
 Now you can exfiltrate information through HTTP requests ( http://yourodmain.com/h/TOKEN). The GET / POST parameters, headers and IP will be registered by Arecibo. 
 
 ```
-curl http://localhost:50000/h/2aa88ba02cbc0d6b72213fc117ae03dc
+curl localhost:50000/h/2aa88ba02cbc0d6b72213fc117ae03dc
 It works!
 ```
 
 To retrieve de info, use /hitshttp/TOKEN:
 
 ```
- curl http://localhost:5000/hitshttp/2aa88ba02cbc0d6b72213fc117ae03dc
+ curl localhost:5000/hitshttp/2aa88ba02cbc0d6b72213fc117ae03dc
  
 {"hits": [{"get": {}, "timestamp": 1541592259.541545, "headers": {"X-Real-Ip": "x", "Connection": "close", "Host": "x", "Accept": "*/*", "User-Agent": "curl/7.55.1"}, "htoken": "2aa88ba02cbc0d6b72213fc117ae03dc", "post": {}, "ip_address": "x"}]}
 ```
