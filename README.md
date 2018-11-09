@@ -12,7 +12,7 @@ curl localhost:5000/generatedns
 
 {"htoken": "c008b5dd22817c50441522f917c66743"} 
 ```
-Now you can use this identificative token to do DNS resolutions (ABCD.c008b5dd22817c50441522f917c66743.x.yourdomain.com:
+Now you can use this identificative token to do DNS resolutions (ABCD.TOKEN.x.yourdomain.com):
 
 ```
 > test-exfiltracion.c008b5dd22817c50441522f917c66743.x.DOMINIO
@@ -26,7 +26,7 @@ Address: 127.0.0.1
 You can check the hits and the data exfiltrated via /hitsdns/TOKEN:
 
 ```
-curl localhost/hitsdns/c008b5dd22817c50441522f917c66743
+curl localhost:5000/hitsdns/c008b5dd22817c50441522f917c66743
 
 {"hits": [{"htoken": "c008b5dd22817c50441522f917c66743", "data": "test-exfiltracion", "id": 9, "timestamp": 1541748637.165287}]} 
 
@@ -131,3 +131,4 @@ pipe-command=/your/path/arecibo-dns-backend.py
 
 **YOUR SERVER MUST BE CONFIGURED AS AUTHORITATIVE DNS FOR YOUR DOMAIN**
 
+**IMPORTANT:** You must set up a nginx or other reverse proxy in front of Arecibo in order to provide authentication & security.
